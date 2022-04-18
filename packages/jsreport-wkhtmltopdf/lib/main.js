@@ -41,7 +41,7 @@ module.exports = function (reporter, definition) {
     javascriptDelay: { type: 'Edm.String' },
     windowStatus: { type: 'Edm.String' },
     wkhtmltopdfVersion: { type: 'Edm.String' },
-    zoom: { type: 'Edm.Float' }
+    zoom: { type: 'Edm.String' }
   })
 
   if (reporter.documentStore.model.entityTypes.TemplateType) {

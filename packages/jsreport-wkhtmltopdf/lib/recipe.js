@@ -140,7 +140,7 @@ function createParams(reporter, request, options, definition, paths) {
   }
 
   if (options.footerFontSize) {
-    if (options.footerFontSize && !params.includes('--footer-spacing')) {
+    if (options.footerHeight && !params.includes('--footer-spacing')) {
       params.push('--footer-spacing')
       params.push(options.footerHeight)
     }
