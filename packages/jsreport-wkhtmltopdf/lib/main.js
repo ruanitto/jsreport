@@ -16,6 +16,8 @@ module.exports = function (reporter, definition) {
     orientation: { type: 'Edm.String' },
     header: { type: 'Edm.String' },
     footer: { type: 'Edm.String' },
+    footerLeft: { type: 'Edm.String' },
+    footerRight: { type: 'Edm.String' },
     headerHeight: { type: 'Edm.String' },
     footerHeight: { type: 'Edm.String' },
     dpi: { type: 'Edm.String' },
