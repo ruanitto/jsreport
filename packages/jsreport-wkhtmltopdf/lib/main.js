@@ -39,7 +39,8 @@ module.exports = function (reporter, definition) {
     printMediaType: { type: 'Edm.Boolean' },
     javascriptDelay: { type: 'Edm.String' },
     windowStatus: { type: 'Edm.String' },
-    wkhtmltopdfVersion: { type: 'Edm.String' }
+    wkhtmltopdfVersion: { type: 'Edm.String' },
+    zoom: { type: 'Edm.Float' }
   })
 
   if (reporter.documentStore.model.entityTypes.TemplateType) {

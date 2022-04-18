@@ -18,7 +18,7 @@ module.exports = async (reporter, definition, request, response) => {
   response.content = buf
 }
 
-function createParams (reporter, request, options, definition, paths) {
+function createParams(reporter, request, options, definition, paths) {
   const params = []
 
   params.push('--debug-javascript')
@@ -156,6 +156,11 @@ function createParams (reporter, request, options, definition, paths) {
     params.push('--disable-smart-shrinking')
   }
 
+  if (options.zoom) {
+    params.push('--zoom')
+    params.push(options.zoom)
+  }
+
   if (options.toc && JSON.parse(options.toc)) {
     params.push('toc')
 
@@ -179,7 +184,7 @@ function createParams (reporter, request, options, definition, paths) {
 
   const outputPath = path.join(
     path.dirname(paths.template),
-        `${path.basename(paths.template, '.html')}.pdf`
+    `${path.basename(paths.template, '.html')}.pdf`
   )
 
   params.push(outputPath)
@@ -187,7 +192,7 @@ function createParams (reporter, request, options, definition, paths) {
   return params
 }
 
-function processPart (reporter, options, req, type, paths) {
+function processPart(reporter, options, req, type, paths) {
   if (!options[type]) {
     return Promise.resolve()
   }
@@ -211,7 +216,7 @@ function processPart (reporter, options, req, type, paths) {
   })
 }
 
-function processHeaderAndFooter (reporter, options, req, paths) {
+function processHeaderAndFooter(reporter, options, req, paths) {
   return processPart(reporter, options, req, 'header', paths).then(function () {
     return processPart(reporter, options, req, 'footer', paths).then(function () {
       return processPart(reporter, options, req, 'cover', paths)
@@ -219,7 +224,7 @@ function processHeaderAndFooter (reporter, options, req, paths) {
   })
 }
 
-function conversion (reporter, definition, parameters, request) {
+function conversion(reporter, definition, parameters, request) {
   let exePath = wkhtmltopdf.path
 
   if (request.template.wkhtmltopdf.wkhtmltopdfVersion) {
