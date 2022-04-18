@@ -119,6 +119,26 @@ function createParams (reporter, request, options, definition, paths) {
     params.push('file:///' + paths['template-footer'])
   }
 
+  if (options.footerLeft) {
+    if (options.footerHeight) {
+      params.push('--footer-spacing')
+      params.push(options.footerHeight)
+    }
+
+    params.push('--footer-left')
+    params.push(options.footerLeft)
+  }
+
+  if (options.footerRight) {
+    if (options.footerHeight) {
+      params.push('--footer-spacing')
+      params.push(options.footerHeight)
+    }
+
+    params.push('--footer-right')
+    params.push(options.footerRight)
+  }
+
   if (options.cover) {
     params.push('cover')
     params.push('file:///' + paths['template-cover'])
