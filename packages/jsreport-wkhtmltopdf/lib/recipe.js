@@ -110,7 +110,7 @@ function createParams(reporter, request, options, definition, paths) {
   }
 
   if (options.footer) {
-    if (options.footerHeight) {
+    if (options.footerHeight && !params.includes('--footer-spacing')) {
       params.push('--footer-spacing')
       params.push(options.footerHeight)
     }
@@ -120,7 +120,7 @@ function createParams(reporter, request, options, definition, paths) {
   }
 
   if (options.footerLeft) {
-    if (options.footerHeight) {
+    if (options.footerHeight && !params.includes('--footer-spacing')) {
       params.push('--footer-spacing')
       params.push(options.footerHeight)
     }
@@ -130,13 +130,23 @@ function createParams(reporter, request, options, definition, paths) {
   }
 
   if (options.footerRight) {
-    if (options.footerHeight) {
+    if (options.footerHeight && !params.includes('--footer-spacing')) {
       params.push('--footer-spacing')
       params.push(options.footerHeight)
     }
 
     params.push('--footer-right')
     params.push(options.footerRight)
+  }
+
+  if (options.footerFontSize) {
+    if (options.footerFontSize && !params.includes('--footer-spacing')) {
+      params.push('--footer-spacing')
+      params.push(options.footerHeight)
+    }
+
+    params.push('--footer-font-size')
+    params.push(options.footerFontSize)
   }
 
   if (options.cover) {

@@ -18,6 +18,7 @@ module.exports = function (reporter, definition) {
     footer: { type: 'Edm.String' },
     footerLeft: { type: 'Edm.String' },
     footerRight: { type: 'Edm.String' },
+    footerFontSize: { type: 'Edm.String' },
     headerHeight: { type: 'Edm.String' },
     footerHeight: { type: 'Edm.String' },
     dpi: { type: 'Edm.String' },
